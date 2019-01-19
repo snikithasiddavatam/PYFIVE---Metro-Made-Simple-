@@ -173,14 +173,27 @@ if username=='123' and password=='1234':
             print("MY CITY")
             print("MY METRO")
             print("MY PRIDE")
+        elif menu=='7': 
+            print("name "+"\t"+"age"+"\t"+"gender"+"\t"+"pnr")
+            for i in range(0,len(names)):
+                print(str(names[i])+" \t"+str(ages[i])+"\t"+str(genders[i])+"\t "+str(pnr[i]))
+                if((i+1)<len(names) and pnr[i]!=pnr[i+1]):
+                    print("===================================================================")
+        elif menu=='8':
+            giftAmount = int(input('Enter the gift card amount : '))
+            if(giftAmount>balance):
+                print("recharge your account. Your current balance is"+str(balance));
+            else:
+                print("Your gift card number : "+str(random.randint(1000000,10000000)));
+                print("Your gift card pin : "+str(random.randint(1000,9000)));
+                balance = balance - giftAmount
+                print("updated balance after Purchase : "+str(balance));
+                transactionDetails.append(-1*giftAmount)
         elif menu=='10':
             break;
 else:
     print("Incorrect!")
-        
-             
-
-
+      
 # In[ ]:
 
 
